@@ -16,8 +16,8 @@ export default function useSolana() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const connection = new Connection("https://api.mainnet-beta.solana.com");
-        const bSolMint = new PublicKey("bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1");
+        const connection = new Connection("REACT_APP_SOLANA_RPC");
+        const bSolMint = new PublicKey("REACT_APP_SOLBLAZE_API");
         
         const supply = await connection.getTokenSupply(bSolMint);
         setTvl(Number(supply.value.amount) / 1e9);
